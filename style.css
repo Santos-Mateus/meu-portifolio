@@ -84,6 +84,7 @@ header .navegacao-primaria li a {
     border-radius: 8px;
     border: 2px solid #fff;
 }
+
 .section-div div a:hover {
     justify-self: start;
     background-color: #dc3545;
