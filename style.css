@@ -35,14 +35,32 @@ header span  {
 
 header .navegacao-primaria {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
 }
 
 header .navegacao-primaria li a {
-    padding: 10px;
     color: #fff;
+    width: 0px;
+    height: 0px;
     font-size: 1.3rem;
+}
+
+header .navegacao-primaria li a::after {
+    content: '';
+    width: 10px;
+    height: 0px;
+    display: block;
+    border-bottom: 4px solid transparent;
+    transition: .9s;
+
+} 
+
+header .navegacao-primaria li a:hover::after {
+    width: 100%;
+    height: 0px;
+    padding: 0px;
+    border-bottom: 4px solid #dc3545;
 }
 
 /* DOWNLOAD CV SEÇÃO */
@@ -179,7 +197,7 @@ main .sobre {
     background-color: #dc3545;
 }
 
-.sobre img {
+.sobre_titulo img {
     animation: ladoSecao .5s ease-in-out forwards;
     cursor: pointer;
     grid-row: 2;
@@ -250,6 +268,51 @@ main .sobre {
     font-size: .9rem;
 }
 
+/* SEÇÃO TECNOLOGIAS */
+
+
+.tecnologias {
+    margin: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+    color: #fff;
+}
+
+.tecnologias h1 {
+    font-size: 2.5rem;
+    color: #ff5d56;
+    margin-bottom: 15px;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.tecnologias p {
+    color: #707070;
+    font-size: 1.4rem;
+    margin-bottom: 1rem ;
+    position: relative;
+}
+
+.tecnologias div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tecnologias span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #dc3545;
+}
+
+.tecnologias li img {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    grid-row: 3;
+}
+
 @keyframes sobeSecao {
     from {
         transition: .5s;
@@ -269,5 +332,50 @@ main .sobre {
 
     to {
         transform: translate3d(0, 0, 0);
+    }
+}
+
+@media(max-width: 992px) {
+    .section-div img {
+        display: none;
+    }
+
+    .section-div {
+        background-image: url(img/Perfil.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #fff;
+        font-size: 3rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        background-color: linear-gradient (rgba(43, 42, 42, 0.176), (46, 46, 46 46));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: #fff;
+        z-index: 5;
+        padding: 30px;
+        font-size: 1.6rem;
+        border-radius: 0 0 4px 4px;
+        right: 10px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
+
+    .sobre img {
+        grid-column: 1/-1;
+        justify-content: center;
+    }
+
+    .sobre_conteudo {
+        grid-column: 1/-1;
     }
 }
