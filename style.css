@@ -313,6 +313,20 @@ main .sobre {
     grid-row: 3;
 }
 
+.tecnologias i {
+    color: #dc3545;
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 1.5rem;
+}
+
+.tecnologias h3 {
+   color: #707070;
+    font-size: 1.4rem;
+    margin-bottom: 1rem ;
+    position: relative;
+}
+
 @keyframes sobeSecao {
     from {
         transition: .5s;
